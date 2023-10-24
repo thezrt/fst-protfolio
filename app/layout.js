@@ -1,5 +1,9 @@
+import Link from 'next/link'
 import './globals.css'
 import { Inter } from 'next/font/google'
+
+import PP2 from './page2'
+import A3 from './page3'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,7 +15,34 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+        
+      <body className={inter.className}>
+        
+           <header>
+            <nav className='  h-20 w-screen flex  items-center  gap-10 text-4xl g justify-around ' >
+
+                <div className='flex  items-center  gap-10 text-4xl g justify-start '>
+                  <img  className='h-[50px] w-[50px] hover:scale-125 transition-all ease-in-out' src="https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-3d/512/Robot-3d-icon.png" alt="" />
+                </div>
+
+              <div className='flex justify-center items-center gap-10'>
+                <Link href="./"className='bg hover:text-cyan-500 transition-all ease-in-out hover:scale-125'>
+                  <h1>Home</h1></Link>
+
+                <Link href="./About"className='bg hover:text-cyan-500 transition-all ease-in-out hover:scale-125'>
+                  <h1>About</h1></Link>
+                  
+                  <Link href="./Contact"className='bg hover:text-cyan-500 transition-all ease-in-out hover:scale-125'>
+                  <h1>Contact</h1></Link>
+              </div>
+                
+               
+            </nav>
+           </header>
+           
+       { children }
+        
+      </body>
     </html>
   )
 }
